@@ -39,6 +39,10 @@
         {
           "from": "application",
           "to": "Domain"
+        },
+        {
+          "from": "Infra",
+          "to": "Infra"
         }
       ],
       "violations": [
@@ -53,18 +57,6 @@
           "to_layer": "adapters",
           "from_module": "user",
           "to_module": "app_state"
-        },
-        {
-          "from_layer": "Infra",
-          "to_layer": "Infra",
-          "from_module": "app",
-          "to_module": "setup"
-        },
-        {
-          "from_layer": "Infra",
-          "to_layer": "Infra",
-          "from_module": "setup",
-          "to_module": "config"
         }
       ]
     }
