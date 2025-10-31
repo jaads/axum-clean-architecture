@@ -1,0 +1,77 @@
+{
+  "layers": [],
+  "packages": [
+    {
+      "name": "clean_architecture",
+      "focus": null,
+      "description": "",
+      "layers": [
+        {
+          "name": "Domain",
+          "description": "",
+          "path": "domain"
+        },
+        {
+          "name": "application",
+          "description": "",
+          "path": "application"
+        },
+        {
+          "name": "adapters",
+          "description": "",
+          "path": "adapters"
+        },
+        {
+          "name": "Infra",
+          "description": "",
+          "path": "infra"
+        }
+      ],
+      "rules": [
+        {
+          "from": "Infra",
+          "to": "adapters"
+        },
+        {
+          "from": "adapters",
+          "to": "application"
+        },
+        {
+          "from": "application",
+          "to": "Domain"
+        }
+      ],
+      "violations": [
+        {
+          "from_layer": "adapters",
+          "to_layer": "Infra",
+          "from_module": "app_state",
+          "to_module": "config"
+        },
+        {
+          "from_layer": "Domain",
+          "to_layer": "adapters",
+          "from_module": "user",
+          "to_module": "app_state"
+        },
+        {
+          "from_layer": "Infra",
+          "to_layer": "Infra",
+          "from_module": "app",
+          "to_module": "setup"
+        },
+        {
+          "from_layer": "Infra",
+          "to_layer": "Infra",
+          "from_module": "setup",
+          "to_module": "config"
+        }
+      ]
+    }
+  ],
+  "rules": [],
+  "planned_packages": [],
+  "domains": [],
+  "rule_violations": [],
+  "decisions": []
+}
