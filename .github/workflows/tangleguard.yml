@@ -1,0 +1,15 @@
+
+name: Architecture Visualization via TangleGuard Cloud
+on:
+  workflow_dispatch:
+
+jobs:
+  run-scan-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TangleGuard/github-action@0.1
+        with:
+          upload_results: "true"
+          make_public: "true"
+          language: "rust"
+          description: "A template for use of (modified) clean architecture with axum."
